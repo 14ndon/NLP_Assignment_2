@@ -1,0 +1,10 @@
+'' . </s> | 1.0
+, the jury | 0.4375
+<s> The jury | 0.2222222222222222
+'' , the | 0.8571428571428571
+the jury said | 0.7142857142857143
+said . </s> | 1.0
+jury said , | 0.42857142857142855
+jury said it | 0.42857142857142855
+to make the | 1.0
+is expected to | 1.0
