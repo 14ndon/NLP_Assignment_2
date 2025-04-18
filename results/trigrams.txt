@@ -1,0 +1,10 @@
+'' . </s> | 1.0
+, the jury | 0.4375
+the jury said | 0.5384615384615384
+<s> the jury | 0.2222222222222222
+'' , the | 0.8571428571428571
+said . </s> | 1.0
+the fulton county | 0.5
+jury said , | 0.375
+jury said it | 0.375
+to make the | 1.0
