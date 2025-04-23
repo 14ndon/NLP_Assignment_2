@@ -14,6 +14,9 @@ nlp.max_length = 6000000
 ### PART 1 ###
 
 
+print('----PART 1----')
+print()
+
 # Tokenize words (No digits or punctuation. Keep contractions and hyphenated words.)
 pattern = r"\b[a-zA-Z]+(?:[-'][a-zA-Z]+)*\b"
 regexp_tokenizer = RegexpTokenizer(pattern)
@@ -31,6 +34,9 @@ corpus_descending_list = []
 for word, freq in corpus_count:
     corpus_descending_list.append(word)
 
+print(corpus_descending_list[:10])
+print()
+
 # Unique list of 'lore' words in descending order by count
 lore_words = ' '.join(brown.words(categories='lore'))
 lore_tokens = clean_tokens(lore_words, regexp_tokenizer)
@@ -40,6 +46,9 @@ lore_descending_list = []
 for word, freq in lore_count:
     lore_descending_list.append(word)
 
+print(lore_descending_list[:10])
+print()
+
 # Unique list of 'humor' words in descending order by count
 humor_words = ' '.join(brown.words(categories='humor'))
 humor_tokens = clean_tokens(humor_words, regexp_tokenizer)
@@ -48,6 +57,9 @@ humor_count = Counter(humor_tokens).most_common()
 humor_descending_list = []
 for word, freq in humor_count:
     humor_descending_list.append(word)
+
+print(humor_descending_list[:10])
+print()
 
 
 ### PART 2 ###
@@ -150,9 +162,11 @@ plt.figure(figsize=(12, 8))
 plt.plot(corpus_order, corpus_frequencies, label='Corpus')
 plt.plot(lore_order, lore_frequencies, label='Lore')
 plt.plot(humor_order, humor_frequencies, label='Humor')
+
 plt.title('Word Frequencies (Linear)')
 plt.xlabel('Rank')
 plt.ylabel('Frequency')
+
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
@@ -163,9 +177,11 @@ plt.figure(figsize=(12, 8))
 plt.loglog(corpus_order, corpus_frequencies, label='Corpus')
 plt.loglog(lore_order, lore_frequencies, label='Lore')
 plt.loglog(humor_order, humor_frequencies, label='Humor')
+
 plt.title('Word Frequencies (Log)')
 plt.xlabel('Rank')
 plt.ylabel('Frequency')
+
 plt.legend()
 plt.grid(True, which="both")
 plt.tight_layout()
